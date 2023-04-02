@@ -1,12 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import NavbarComponent from '@/components/Navbar'
-import { useTheme } from '@nextui-org/react'
+import IntroComponent from '@/components/typeAnimations';
+import 'animate.css';
 
-const inter = Inter({ subsets: ['latin'] })
-
-
+const inter = Inter({ subsets: ['latin'] });
 export default function Home() {
   return (
     <>
@@ -16,7 +14,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className='min-h-screen flex'>
+        <div className='w-[50%] align-middle m-auto leading-loose text-center text-3xl animate__animated animate__bounceInDown'>
+          <IntroComponent></IntroComponent>
+        </div>
       </main>
     </>
   )

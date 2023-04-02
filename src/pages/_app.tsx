@@ -4,7 +4,7 @@
 import { NextUIProvider, useTheme, createTheme,} from '@nextui-org/react'
 import '@/styles/globals.css'
 import NavbarComponent from '@/components/Navbar'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function MyApp({ Component, pageProps }: { Component: any, pageProps: any }) {
   // 2. Use at the root of your app

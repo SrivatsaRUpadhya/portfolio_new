@@ -36,8 +36,9 @@ function NavbarComponent({props}:{props:{IsDark:boolean, setIsDark:Dispatch<SetS
 
         </Navbar.Brand>
         <Navbar.Content activeColor="primary" hideIn="xs" variant="highlight-rounded">
-          {links.map((navlink) =>
+          {links.map((navlink, key) =>
             <Navbar.Link
+              key={key}
               isActive = {router.pathname === navlink.link ? "true" : undefined}
               href={navlink.link}>{navlink.text}
             </Navbar.Link>)}
@@ -46,7 +47,7 @@ function NavbarComponent({props}:{props:{IsDark:boolean, setIsDark:Dispatch<SetS
           <Switch
             iconOff = {<DarkIconComponent/>}
             iconOn = {<LightIconComponent/>}
-            onChange = {()=>props.setIsDark(!props.IsDark)}
+            onChange = {()=>{props.setIsDark(!props.IsDark)}}
           />
         </Navbar.Content>
       </Navbar>
