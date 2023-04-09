@@ -1,10 +1,11 @@
-import { Navbar, Text, Link, Switch } from "@nextui-org/react";
+import { Navbar, Text, Switch } from "@nextui-org/react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import DarkIconComponent from "@/assets/darkIcon";
 import LightIconComponent from "@/assets/lightIcon";
 import { Dispatch, SetStateAction } from "react";
 
-function NavbarComponent({props}:{props:{IsDark:boolean, setIsDark:Dispatch<SetStateAction<boolean>>}}) {
+function NavbarComponent({ props }: { props: { IsDark: boolean, setIsDark: Dispatch<SetStateAction<boolean>> } }) {
 
   type link = {
     text: string,
@@ -33,21 +34,22 @@ function NavbarComponent({props}:{props:{IsDark:boolean, setIsDark:Dispatch<SetS
     <>
       <Navbar isBordered={true} variant="floating">
         <Navbar.Brand>
-
+          <Link href="/"><i><Text className="font-serif">Srivatsa R Upadhya</Text></i></Link>
         </Navbar.Brand>
         <Navbar.Content activeColor="primary" hideIn="xs" variant="highlight-rounded">
           {links.map((navlink, key) =>
             <Navbar.Link
               key={key}
-              isActive = {router.pathname === navlink.link ? "true" : undefined}
-              href={navlink.link}>{navlink.text}
+              isActive={router.pathname === navlink.link ? "true" : undefined}
+            href={navlink.link}>
+              {navlink.text}
             </Navbar.Link>)}
         </Navbar.Content>
         <Navbar.Content>
           <Switch
-            iconOff = {<DarkIconComponent/>}
-            iconOn = {<LightIconComponent/>}
-            onChange = {()=>{props.setIsDark(!props.IsDark)}}
+            iconOff={<DarkIconComponent />}
+            iconOn={<LightIconComponent />}
+            onChange={() => { props.setIsDark(!props.IsDark) }}
           />
         </Navbar.Content>
       </Navbar>

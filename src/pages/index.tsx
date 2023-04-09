@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import IntroComponent from '@/components/typeAnimations';
 import 'animate.css';
+import AboutComponent from '@/components/About';
 
 const inter = Inter({ subsets: ['latin'] });
 export default function Home() {
@@ -14,9 +15,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='min-h-screen flex'>
-        <div className='w-[50%] align-middle m-auto leading-loose text-center text-3xl animate__animated animate__bounceInDown'>
+      <main className='antialiased'>
+        <div className='leading-loose sm:leading-loose min-h-[90vh] sticky flex text-center text-lg sm:text-3xl animate__animated animate__bounceInDown'>
           <IntroComponent></IntroComponent>
+        </div>
+        <div id='about' className='sm:flex w-[80%] bg-gray-700 dark:bg-gray-100 rounded-lg m-auto'>
+          <AboutComponent></AboutComponent>
         </div>
       </main>
     </>
