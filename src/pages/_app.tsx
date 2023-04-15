@@ -27,10 +27,6 @@ function MyApp({ Component, pageProps }: { Component: any, pageProps: any }) {
     }
   })
 
-  useEffect(()=>{
-    AOS.init();
-  },[])
-
   return (
     <NextUIProvider theme={IsDark ? darkTheme : lightTheme}>
       <NavbarComponent props={{ IsDark, setIsDark }}></NavbarComponent>
