@@ -1,6 +1,5 @@
 import { Card, Grid, Row, Text } from "@nextui-org/react";
 import React from "react";
-import 'aos';
 import Link from "next/link";
 import ghLogo from "public/Images/github-mark-white.svg"
 
