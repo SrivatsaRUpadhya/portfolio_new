@@ -24,14 +24,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section id='about' className='p-8 mt-5' data-aos-delay="100" data-aos = "fade-in" data-aos-once = "false"  data-aos-easing = "ease-in-out">
+        <section id='about' className='p-8 mt-5' data-aos-delay="100" data-aos = "fade-in">
           <h2 className='text-xl pb-5 underline'><Link href="#about"># A little about me</Link></h2>
           <div className='md:flex border rounded-lg m-auto shadow-md'>
             <AboutComponent></AboutComponent>
           </div>
         </section>
 
-        <section id='projects' className='p-8 mt-5' data-aos-delay="100" data-aos = "fade-in" data-aos-easing = "ease-in-out" data-aos-once = "false">
+        <section id='projects' className='p-8 mt-5' data-aos-delay="100" data-aos = "fade-in">
           <h2 className='text-xl pb-5 underline'><Link href="#about"># A few of my Projects</Link></h2>
           <div className='md:flex m-auto'>
             <ProjectsComponent></ProjectsComponent>

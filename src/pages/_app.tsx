@@ -5,8 +5,7 @@ import { NextUIProvider, useTheme, createTheme,} from '@nextui-org/react'
 import '@/styles/globals.css'
 import NavbarComponent from '@/components/Navbar'
 import { useEffect, useState } from 'react';
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 
 function MyApp({ Component, pageProps }: { Component: any, pageProps: any }) {
   // 2. Use at the root of your app
@@ -29,11 +28,7 @@ function MyApp({ Component, pageProps }: { Component: any, pageProps: any }) {
   })
 
   useEffect(()=>{
-    AOS.init({
-      easing: "ease-out-cubic",
-      once: true,
-      offset: 50,
-    });
+    AOS.init();
   },[])
 
   return (
