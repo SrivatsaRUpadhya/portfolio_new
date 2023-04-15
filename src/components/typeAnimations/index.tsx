@@ -4,7 +4,7 @@ import { TypeAnimation } from "react-type-animation";
 export default function IntroComponent(): ReactElement {
     return (
         <>
-            <div className="align-middle sm:w-[50%] m-auto">
+            <div className="align-middle md:w-[50%] m-auto drop-shadow">
                 <TypeAnimation
                     sequence={[
                         'Hello, Srivatsa Here', 2000,

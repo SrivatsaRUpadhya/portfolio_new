@@ -4,6 +4,8 @@ import { Inter } from 'next/font/google'
 import IntroComponent from '@/components/typeAnimations';
 import 'animate.css';
 import AboutComponent from '@/components/About';
+import Link from 'next/link';
+import ProjectsComponent from '@/components/Projects/inedex';
 
 const inter = Inter({ subsets: ['latin'] });
 export default function Home() {
@@ -15,13 +17,26 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='antialiased'>
-        <div className='leading-loose sm:leading-loose min-h-[90vh] sticky flex text-center text-lg sm:text-3xl animate__animated animate__bounceInDown'>
-          <IntroComponent></IntroComponent>
-        </div>
-        <div id='about' className='sm:flex w-[80%] bg-gray-700 dark:bg-gray-100 rounded-lg m-auto'>
-          <AboutComponent></AboutComponent>
-        </div>
+      <main className='antialiased container m-auto'>
+        <section id='top'>
+          <div className='leading-loose sm:leading-loose min-h-[90vh] sticky flex text-center text-lg sm:text-3xl animate__animated animate__bounceInDown'>
+            <IntroComponent></IntroComponent>
+          </div>
+        </section>
+
+        <section id='about' className='p-8 mt-5' data-aos-delay="100" data-aos = "fade-in" data-aos-once = "false"  data-aos-easing = "ease-in-out">
+          <h2 className='text-xl pb-5 underline'><Link href="#about"># A little about me</Link></h2>
+          <div className='md:flex border rounded-lg m-auto shadow-md'>
+            <AboutComponent></AboutComponent>
+          </div>
+        </section>
+
+        <section id='projects' className='p-8 mt-5' data-aos-delay="100" data-aos = "fade-in" data-aos-easing = "ease-in-out" data-aos-once = "false">
+          <h2 className='text-xl pb-5 underline'><Link href="#about"># A few of my Projects</Link></h2>
+          <div className='md:flex m-auto'>
+            <ProjectsComponent></ProjectsComponent>
+          </div>
+        </section>
       </main>
     </>
   )

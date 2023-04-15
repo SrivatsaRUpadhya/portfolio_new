@@ -18,40 +18,60 @@ function NavbarComponent({ props }: { props: { IsDark: boolean, setIsDark: Dispa
     },
     {
       "text": 'About',
-      "link": '/about'
+      "link": '#about'
     },
     {
       "text": 'Projects',
-      "link": '/projects'
+      "link": '#projects'
     },
     {
       "text": 'Contact',
-      "link": '/contact'
+      "link": '#contact'
     },
   ]
   const router = useRouter();
   return (
     <>
-      <Navbar isBordered={true} variant="floating">
+      <Navbar variant="sticky">
         <Navbar.Brand>
           <Link href="/"><i><Text className="font-serif">Srivatsa R Upadhya</Text></i></Link>
         </Navbar.Brand>
-        <Navbar.Content activeColor="primary" hideIn="xs" variant="highlight-rounded">
+        <div className="hidden sm:contents">
+          <Navbar.Content activeColor="primary" hideIn="xs" variant="highlight-rounded">
+            {links.map((navlink, key) =>
+              <Navbar.Link
+                key={key}
+                href={navlink.link}>
+                {navlink.text}
+              </Navbar.Link>)}
+          </Navbar.Content>
+          <Navbar.Content>
+            <Switch
+              checked={props.IsDark}
+              iconOff={<DarkIconComponent />}
+              iconOn={<LightIconComponent />}
+              onChange={() => { window.localStorage.setItem('isDark', !props.IsDark ? "true" : ""); props.setIsDark(!props.IsDark) }}
+            />
+          </Navbar.Content>
+        </div>
+        <Navbar.Toggle className="visible sm:hidden" />
+        <Navbar.Collapse>
           {links.map((navlink, key) =>
-            <Navbar.Link
-              key={key}
-              isActive={router.pathname === navlink.link ? "true" : undefined}
-            href={navlink.link}>
-              {navlink.text}
-            </Navbar.Link>)}
-        </Navbar.Content>
-        <Navbar.Content>
+            <Navbar.CollapseItem>
+              <Link
+                key={key}
+                href={navlink.link}>
+                {navlink.text}
+              </Link>
+            </Navbar.CollapseItem>
+          )}
           <Switch
+            checked={props.IsDark}
             iconOff={<DarkIconComponent />}
             iconOn={<LightIconComponent />}
-            onChange={() => { props.setIsDark(!props.IsDark) }}
+            onChange={() => { window.localStorage.setItem('isDark', !props.IsDark ? "true" : ""); props.setIsDark(!props.IsDark) }}
           />
-        </Navbar.Content>
+        </Navbar.Collapse>
       </Navbar>
     </>
   )
