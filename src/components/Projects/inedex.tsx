@@ -29,9 +29,9 @@ export default function ProjectsComponent(): React.ReactElement {
         {
             title: "Smart Trolley",
             desc: "This is a smart trolley that tries solve the problem of long queues at billing counters at shopping centers. The idea is to have an RFID system with RFID scanners in the shopping carts that scan the RFID tags on products. As the products are dropped into the trolley the bill is updated. This is a project that is currently in progress",
-            link: "",
-            ghLink: "",
-            image: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
+            link: "https://smart-trolley.vercel.app/",
+            ghLink: "https://github.com/SrivatsaRUpadhya/smart_trolley",
+            image: "Images/Smart-Trolley.png"
         },
     ];
     return (
