@@ -26,7 +26,7 @@ function NavbarComponent({ props }: { props: { IsDark: boolean, setIsDark: Dispa
     },
     {
       "text": 'Contact',
-      "link": '#contact'
+      "link": '#footer'
     },
   ]
   const router = useRouter();
